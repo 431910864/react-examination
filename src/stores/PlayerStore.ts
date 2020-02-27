@@ -57,16 +57,21 @@ export default class PlayerStore {
     ];
     constructor(private rootStore: RootStore) { }
     @computed get isMaxSize() {
-        return this.playersById.length < this.size;
+        return this.playersFilterList.length < this.size;
     }
     @computed get size() {
         return this.pageSize * this.pageIndex;
     }
-    @computed get playersByIdList() {
+    @computed get playersFilterList() {
         const { value } = this.playersByIdSelectValue;
         return this.playersById.filter((item, index) => {
-            return index < this.size && (item.position === value || value === 'All');
+            return (item.position === value || value === 'All');
         });
+    }
+    @computed get playersByIdList() {
+        return this.playersFilterList.filter((item, index) => {
+            return index < this.size;
+        })
     }
     @action addPlayer(name: string | undefined) {
         const playersByIdItem: PlayersByIdTypes = {
@@ -82,7 +87,7 @@ export default class PlayerStore {
         this.playersById.splice(id, 1);
     }
     @action starPlayer(id?: number) {
-        if (!id) return;
+        if (typeof id !== 'number') return;
         const playersById: PlayersByIdTypes = this.playersById[id];
         this.playersById.splice(id, 1, {
             ...playersById,
@@ -94,6 +99,7 @@ export default class PlayerStore {
         this.pageIndex += 1;
     }
     @action setPlayersByIdSelectValue(value: PlayersByIdSelectTypes) {
+        this.pageIndex = 1;
         this.playersByIdSelectValue = value;
     }
 }

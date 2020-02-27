@@ -2,3 +2,8 @@
   padding-left: 0;
   margin-bottom: 0;
 }
+:local(.footer) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,9 +1,9 @@
 import React, { ChangeEventHandler, KeyboardEventHandler } from 'react';
 import { RootStoreContext } from '../stores/RootStore';
 import { observer } from 'mobx-react-lite';
-import classnames from "classnames";
+import classnames from 'classnames';
 // @ts-ignore
-import styles from "./AddPlayerInput.css";
+import styles from './AddPlayerInput.css';
 
 type AddPlayerInputProps = {
 };

@@ -1,0 +1,12 @@
+:local(.addPlayerSelect) {
+    width: 70px;
+    height: 38px;
+}
+
+:local(.addPlayerSelect > div) {
+    width: 70px;
+    height: 38px;
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

@@ -3,6 +3,8 @@ import { RootStoreContext } from '../stores/RootStore';
 import { observer } from 'mobx-react-lite';
 import Select from 'react-select';
 import { PlayersByIdSelectTypes } from '../stores/PlayerStoreTypes';
+// @ts-ignore
+import styles from './AddPlayerSelect.css';
 
 type AddPlayerInputProps = {
 };
@@ -17,7 +19,7 @@ const AddPlayerInput: React.FC<AddPlayerInputProps> = props => {
     return <>
         {
             // @ts-ignore
-            <Select value={playerStore.playersByIdSelectValue} onChange={onChanged} options={playerStore.playersByIdSelect}/>
+            <Select className={styles.addPlayerSelect} value={playerStore.playersByIdSelectValue} onChange={onChanged} options={playerStore.playersByIdSelect}/>
         }
     </>
 }

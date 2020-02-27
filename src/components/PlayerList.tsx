@@ -1,7 +1,9 @@
 import React, { MouseEventHandler } from 'react';
 import { RootStoreContext } from '../stores/RootStore';
 import { observer } from 'mobx-react-lite';
-import PlayerListItem from "./PlayerListItem";
+import PlayerListItem from './PlayerListItem';
+// @ts-ignore
+import styles from './PlayerList.css';
 
 type PlayerListProps = {
 };
@@ -25,7 +27,7 @@ const PlayerList: React.FC<PlayerListProps> = props => {
                 />);
             })
         }
-        <div>
+        <div className={styles.footer}>
             { !playerStore.isMaxSize ? <button onClick={onLoadMoreClick}>点击加载更多</button> : null }
         </div>
     </>

@@ -9,7 +9,7 @@ const App: React.FC = () => {
     const { appStore } = React.useContext(RootStoreContext);
     return (
         <div>
-            <header className={styles.playerListApp}>{appStore.title}</header>
+            <header className={styles.header}>{appStore.title}</header>
             <PlayerListApp />
         </div>
     );

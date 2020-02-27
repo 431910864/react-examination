@@ -3,7 +3,7 @@ import { RootStoreContext } from '../stores/RootStore';
 import { observer } from 'mobx-react-lite';
 import classnames from 'classnames';
 // @ts-ignore
-import styles from "./PlayerListItem.css";
+import styles from './PlayerListItem.css';
 import { PlayersByIdTypes } from '../stores/PlayerStoreTypes';
 
 const PlayerListItem: React.FC<PlayersByIdTypes> = props => {
