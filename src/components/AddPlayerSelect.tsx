@@ -6,10 +6,10 @@ import { PlayersByIdSelectTypes } from '../stores/PlayerStoreTypes';
 // @ts-ignore
 import styles from './AddPlayerSelect.css';
 
-type AddPlayerInputProps = {
+type AddPlayerSelectProps = {
 };
 
-const AddPlayerInput: React.FC<AddPlayerInputProps> = props => {
+const AddPlayerSelect: React.FC<AddPlayerSelectProps> = props => {
     const { playerStore } = React.useContext(RootStoreContext);
 
     const onChanged: (e: PlayersByIdSelectTypes) => void = (e: PlayersByIdSelectTypes) => {
@@ -24,4 +24,4 @@ const AddPlayerInput: React.FC<AddPlayerInputProps> = props => {
     </>
 }
 
-export default observer(AddPlayerInput);
+export default observer(AddPlayerSelect);

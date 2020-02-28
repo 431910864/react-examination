@@ -83,7 +83,7 @@ export default class PlayerStore {
         this.playersById.push(playersByIdItem);
     }
     @action deletePlayer(id?: number) {
-        if (!id) return;
+        if (typeof id !== 'number') return;
         this.playersById.splice(id, 1);
     }
     @action starPlayer(id?: number) {
